@@ -1,0 +1,371 @@
+@font-face {
+    font-family: Bebas;
+    src: url('../font/bebas/Bebas.woff') format("truetype");
+}
+
+html {
+    scroll-padding-top: 3rem;
+}
+
+header nav button {
+    display: none;
+}
+
+header nav .d-flex {
+    flex-direction: row;
+}
+
+header nav.sticky{
+    background-color: white;
+    transition: .5s;
+}
+
+header nav.sticky ul li a{
+    color: #57647d;
+}
+
+header nav.sticky ul li a:hover{
+    color: #57647d;
+}
+
+header nav.sticky ul li {
+    border-bottom: 1px solid #57647d;
+}
+
+header nav ul {
+    height: 2rem;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    display: flex;
+}
+
+header nav ul li a{
+    font-family: Lato;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li a:hover{
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li {
+    border-bottom: 1px solid white;
+}
+
+#Main {
+    min-height: 90vh;
+    background-image: url('../img/LosAngelesMountains-MainPhoto.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+#Main img {
+    display: none;
+}
+
+@media screen and (max-width: 550px){
+    #Main{
+        background-image: url("../img/LosAngelesMountains-MainPhoto-Mobile.jpg");
+        background-position: top;
+    }
+
+    #Main img {
+        max-width: 65vw;
+        display: block;
+        padding-top: 15vh;
+    }
+
+    header nav .d-flex {
+        flex-direction: column;
+    }
+
+    header nav {
+        background-color: white;
+    }
+
+    header nav button {
+        background-color: white;
+        border: 0;
+        border-radius: 3px;
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    header nav ul.open {
+        display: flex;
+    }
+
+    header nav ul li {
+        color: #57647d;
+        border-bottom: 1px solid #57647d;
+    }
+
+
+    header nav ul li a {
+        color: #57647d;
+    }
+
+    header nav ul li a:hover {
+        color: #57647d;
+    }
+
+}
+
+hr.separator {
+    height: 3vh;
+    opacity: 1;
+}
+
+.bg-mountainblue {
+    background-color: #57647d;
+}
+
+#History {
+    background-size: inherit;
+    background-position: top;
+    min-height: 100vh;
+}
+
+#Climb input[type="radio"]{
+    display: none;
+}
+
+#Climb nav {
+    position: relative;
+}
+
+#Climb label {
+    font-family: Oswald;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: #c4c7ce;
+    text-decoration: none;
+    cursor: pointer;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#Climb .slider {
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background-color: #c4c7ce;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+#Mountain2:checked ~ nav .slider {
+    left: 25%;
+}
+
+#Mountain1:checked ~ nav label.Mountain1,
+#Mountain2:checked ~ nav label.Mountain2{
+    color: #57647d;
+}
+
+@media screen and (max-width: 550px){
+    #Climb label {
+        width: 50%;
+    }
+    
+    #Climb .slider {
+        width: 50%;
+    }
+    
+    #Mountain2:checked ~ nav .slider {
+        left: 50%;
+    }
+}
+
+.mountaintabs{
+    z-index: 10;
+}
+
+.sectionTitle {
+    font-family: Oswald;
+    color: #57647d;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.sectionTitle .largenumber {
+    opacity: .5;
+    font-size: 10rem;
+    line-height: 1;
+}
+
+.sectionTitle .dot {
+    background-color: #57647d;
+    opacity: .5;
+    height: 2rem;
+    width: 2rem;
+}
+
+p.description {
+    font-family: Lato;
+    font-weight: lighter;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 550px){
+    p.description {
+        font-size: 1rem;
+    }
+}
+
+div.carousel-bg {
+    background-color: #57647d80;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper .carousel {
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging img{
+    pointer-events: none;
+}
+
+.wrapper i {
+    background-color: #57647d;
+    color: white;
+    position: absolute;
+    top: 50%;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+    font-size: 1.2rem;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.wrapper i:first-child{
+    left: -23px;
+    display: none;
+}
+
+.wrapper i:last-child{
+    right: -23px;
+}
+
+.carousel img {
+    height: 170px;
+    object-fit: cover;
+    width: calc(100% / 4);
+}
+
+@media screen and (max-width: 900px){
+    .carousel img{
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 550px){
+    .carousel img{
+        width: 100%;
+    }
+}
+
+.sectionMountain {
+    min-height: 80vh;
+}
+
+.sectionMountain h3 {
+    font-family: Oswald;
+    color: #57647d;
+}
+
+.sectionMountain table{
+    font-family: Lato;
+    table-layout: fixed;
+    margin: 0;
+}
+
+.sectionMountain table .table-month {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    vertical-align: top;
+}
+
+.sectionMountain table .table-month:last-child {
+    margin: 0;
+}
+
+.sectionMountain table .table-month tr td {
+    vertical-align: top;
+}
+
+.sectionMountain table .table-month tr td:first-child {
+    font-weight: bold;
+}
+
+#SectionMountain1 {
+    background-position: center;
+}
+
+@media screen and (max-width: 550px){
+    .sectionMountain{
+        min-height: 70vh;
+    }
+
+    #SectionMountain2 {
+        background-position: center;
+    }
+
+    .table-month tr,
+    .table-month td{
+        display: block;
+        width: 100%;
+    }
+}
+
+footer {
+    min-height: 45px;
+}
+
+footer div {
+    opacity: 0.3;
+    font-family: Lato;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+@media screen and (max-width: 550px){
+    footer div {
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px
+    }
+}
